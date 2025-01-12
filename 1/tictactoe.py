@@ -1,16 +1,16 @@
-The following issues are present in the code :
-1. The position for the first row is misaligned with the red line, for row = 1, pos_x should be 30, and the same goes for the column as well.
-   "if row == 1:
-         pos_x = 50"
-2. After the game is over, it only waits for 3 seconds but it should wait for 10 seconds.
-    "time.sleep(3)"  should be changed to "time.sleep(10)"
-3. In the draw_status function, the height of the rectangle was inaccurate due to which the status(who won) was not visible.
-    "text_rect = text.get_rect(center=(WIDTH / 2, HEIGHT/2))" 
-    **HEIGHT/2 should be changed to HEIGHT + 50**
+# The following issues are present in the code :
+# 1. The position for the first row is misaligned with the red line, for row = 1, pos_x should be 30, and the same goes for the column as well.
+#    "if row == 1:
+#          pos_x = 50"
+# 2. After the game is over, it only waits for 3 seconds but it should wait for 10 seconds.
+#     "time.sleep(3)"  should be changed to "time.sleep(10)"
+# 3. In the draw_status function, the height of the rectangle was inaccurate due to which the status(who won) was not visible.
+#     "text_rect = text.get_rect(center=(WIDTH / 2, HEIGHT/2))" 
+#     **HEIGHT/2 should be changed to HEIGHT + 50**
 
 
-Has IF
-Has TF
+# Has IF
+# Has TF
 
 import pygame as pg
 
@@ -320,13 +320,13 @@ while True: # continue loop until user closes the window
 
     clock.tick(FPS)
 
-    These are the following rewrite:
-1. The position for the first row is misaligned with the red line, for row = 1, pos_x should be 30, and the same goes for the column as well.
-   "if row == 1:
-         pos_x = 50"
-    and it has been changed,
-2. After the game is over, it only waits for 3 seconds but it should wait for 10 seconds, so this has been rectified.
-    "time.sleep(3)"  should be changed to "time.sleep(10)"
-3. In the draw_status function, the height of the rectangle was inaccurate due to which the status(who won) was not visible, and so this has been rewritten
-    "text_rect = text.get_rect(center=(WIDTH / 2, HEIGHT/2))" 
-    **HEIGHT/2 should be changed to HEIGHT + 50**
+#     These are the following rewrite:
+# 1. The position for the first row is misaligned with the red line, for row = 1, pos_x should be 30, and the same goes for the column as well.
+#    "if row == 1:
+#          pos_x = 50"
+#     and it has been changed,
+# 2. After the game is over, it only waits for 3 seconds but it should wait for 10 seconds, so this has been rectified.
+#     "time.sleep(3)"  should be changed to "time.sleep(10)"
+# 3. In the draw_status function, the height of the rectangle was inaccurate due to which the status(who won) was not visible, and so this has been rewritten
+#     "text_rect = text.get_rect(center=(WIDTH / 2, HEIGHT/2))" 
+#     **HEIGHT/2 should be changed to HEIGHT + 50**
