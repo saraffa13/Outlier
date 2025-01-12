@@ -1,25 +1,25 @@
-# These are some of the following issues in the code - 
-# 1. The size of the res array is not declared correctly.
-#     It should be `res = [False] * (limit + 1)` instead of `res = [False]`
-# 2. The loop condition checking should be corrected to 
-#       `while i*i <= limit:
-#          j = 1
-#          while j*j <= limit:`
-#      as with other sieve algorithms, Sieve of Atkin works on the principle that non-prime numbers have factors, so it's sufficient to mark multiples 
-#      only up to the square root.
+These are some of the following issues in the code - 
+1. The size of the res array is not declared correctly.
+    It should be `res = [False] * (limit + 1)` instead of `res = [False]`
+2. The loop condition checking should be corrected to 
+      `while i*i <= limit:
+         j = 1
+         while j*j <= limit:`
+     as with other sieve algorithms, Sieve of Atkin works on the principle that non-prime numbers have factors, so it's sufficient to mark multiples 
+     only up to the square root.
 
-# 3. Currently we are directly returning 'res' which is a boolean array but we must return the list of prime numbers we can add this code to follow the correct logic.
-#     primes = []
-#     i = 2
-#     while i <= limit:
-#         if res[i]:
-#             primes.append(i)
-#         i += 1
-#     return primes.
+3. Currently we are directly returning 'res' which is a boolean array but we must return the list of prime numbers we can add this code to follow the correct logic.
+    primes = []
+    i = 2
+    while i <= limit:
+        if res[i]:
+            primes.append(i)
+        i += 1
+    return primes.
 
 
-# No IF
-# Has Truthfullness
+No IF
+Has Truthfullness
 
 def sieve(limit):
 
@@ -176,21 +176,21 @@ if __name__ == '__main__':
 
 
 
-# The fixes that I made is: 
-# 1. The size of the res array has been corrected.
-#     It should be `res = [False] * (limit + 1)` instead of `res = [False]`
-# 2. The loop condition checking has been corrected to 
-#       `while i*i <= limit:
-#          j = 1
-#          while j*j <= limit:`
-#      as with other sieve algorithms, Sieve of Atkin works on the principle that non-prime numbers have factors, so it's sufficient to mark multiples 
-#      only up to the square root.
+The fixes that I made is: 
+1. The size of the res array has been corrected.
+    It should be `res = [False] * (limit + 1)` instead of `res = [False]`
+2. The loop condition checking has been corrected to 
+      `while i*i <= limit:
+         j = 1
+         while j*j <= limit:`
+     as with other sieve algorithms, Sieve of Atkin works on the principle that non-prime numbers have factors, so it's sufficient to mark multiples 
+     only up to the square root.
 
-# 3. Currently we are directly returning 'res' which is a boolean array but we must return the list of prime numbers, so a list of prime numbers has been constructed and returned.
-#     primes = []
-#     i = 2
-#     while i <= limit:
-#         if res[i]:
-#             primes.append(i)
-#         i += 1
-#     return primes.
+3. Currently we are directly returning 'res' which is a boolean array but we must return the list of prime numbers, so a list of prime numbers has been constructed and returned.
+    primes = []
+    i = 2
+    while i <= limit:
+        if res[i]:
+            primes.append(i)
+        i += 1
+    return primes.
