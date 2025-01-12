@@ -1,30 +1,32 @@
-# These are the following issues here:
-# 1. It is mentioned in the prompt that there should not be any comments unless specified which has not been followed as there is a comment "# Add new user to DataFrame."
-# 2. While comparing the password it should be user.password == password, but the model has just written password == password, which is incorrect comparison.
-# 3. Once the password is correct, the failed attempts should not be increased, which is currently getting increased right now. 
-#     `user.increment_failed_attempts()` -> This line should not be there in the password comparison if block.
-# 4. When the password doesn't matches, it goes to the else block, where the code is resetting the failed attempts instead of incrementing it.
-#     So, instead of "user.reset_failed_attempts()" it should be "user.increment_failed_attempts()"
-# 5. The failed attempts should be zero initially, while registering the user, instead of 3.
-#     So, instead of  "failed_attempts_left": [3], it should be  "failed_attempts_left": [0], 
-# 6. User should not be converted to lowercase. 
-#     Instead of user_row = self.users[self.users['username'].str.lower() == username.lower()] it should be user_row = 
-#     self.users[self.users['username'] == username].
-# 7.  As instructed in the prompt, it should first login thrice with neena, 
-#     "auth_system.login("neena", "password321")  
-#       auth_system.login("Neena", "password123")  
-#       auth_system.login("neena", "password123") "
-#     and twice with helios,
-#      "auth_system.login("helios", "password321")
-#       auth_system.login("helios", "mysecurepassword")"
+These are the following issues here:
+1. It is mentioned in the prompt that there should not be any comments unless specified which has not been followed as there is a comment "# Add new user to DataFrame."
+2. While comparing the password it should be user.password == password, but the model has just written password == password, which is incorrect comparison.
+3. Once the password is correct, the failed attempts should not be increased, which is currently getting increased right now. 
+    `user.increment_failed_attempts()` -> This line should not be there in the password comparison if block.
+4. When the password doesn't matches, it goes to the else block, where the code is resetting the failed attempts instead of incrementing it.
+    So, instead of "user.reset_failed_attempts()" it should be "user.increment_failed_attempts()"
+5. The failed attempts should be zero initially, while registering the user, instead of 3.
+    So, instead of  "failed_attempts_left": [3], it should be  "failed_attempts_left": [0], 
+6. User should not be converted to lowercase. 
+    Instead of user_row = self.users[self.users['username'].str.lower() == username.lower()] it should be user_row = 
+    self.users[self.users['username'] == username].
+7.  As instructed in the prompt, it should first login thrice with neena, 
+    "auth_system.login("neena", "password321")  
+      auth_system.login("Neena", "password123")  
+      auth_system.login("neena", "password123") "
+    and twice with helios,
+     "auth_system.login("helios", "password321")
+      auth_system.login("helios", "mysecurepassword")"
 
-#   but it has logged in four times with neena and once with helios,
+  but it has logged in four times with neena and once with helios,
 
-# "auth_system.login("neena", "password321")  
-#  auth_system.login("Neena", "password123")  
-#  auth_system.login("neena", "password321")  
-#  auth_system.login("neena", "password123")   
-#  auth_system.login("helios", "mysecurepassword")"
+"auth_system.login("neena", "password321")  
+ auth_system.login("Neena", "password123")  
+ auth_system.login("neena", "password321")  
+ auth_system.login("neena", "password123")   
+ auth_system.login("helios", "mysecurepassword")"
+
+
 import pandas as pd
 
 
@@ -173,32 +175,32 @@ auth_system.login("helios", "mysecurepassword")
 
 
 
-# These are the following rewrites:
-# 1. A comment "# Add new user to DataFrame."  has been removed from the code as its been mentioned not to use any comments unless specified.
-# 2. While comparing the password it should be user.password == password, but the model has just written password == password, which is incorrect comparison, so `password == password` -> `user.password == password`.
-# 3. Once the password is correct, the failed attempts should not be increased, which is currently getting increased right now. 
-#     `user.increment_failed_attempts()` -> This line should not be there in the password comparison if block and so it has been removed from there.
-# 4. When the password doesn't matches, it goes to the else block, where the code is resetting the failed attempts instead of incrementing it.
-#     So, "user.reset_failed_attempts()" has been changed to "user.increment_failed_attempts()"
-# 5. The failed attempts should be zero initially, while registering the user, instead of 3.
-#     So, "failed_attempts_left": [3], has been changed to  "failed_attempts_left": [0], 
-# 6. username should not be converted to lowercase. 
-#     `user_row = self.users[self.users['username'].str.lower() == username.lower()]` has been changed to `user_row = 
-#     self.users[self.users['username'] == username]`
-# 7.  As instructed in the prompt, it should first login thrice with neena, and then twice with helios, so
-# "auth_system.login("neena", "password321")  
-#  auth_system.login("Neena", "password123")  
-#  auth_system.login("neena", "password321")  
-#  auth_system.login("neena", "password123")   
-#  auth_system.login("helios", "mysecurepassword")"
+These are the following rewrites:
+1. A comment "# Add new user to DataFrame."  has been removed from the code as its been mentioned not to use any comments unless specified.
+2. While comparing the password it should be user.password == password, but the model has just written password == password, which is incorrect comparison, so `password == password` -> `user.password == password`.
+3. Once the password is correct, the failed attempts should not be increased, which is currently getting increased right now. 
+    `user.increment_failed_attempts()` -> This line should not be there in the password comparison if block and so it has been removed from there.
+4. When the password doesn't matches, it goes to the else block, where the code is resetting the failed attempts instead of incrementing it.
+    So, "user.reset_failed_attempts()" has been changed to "user.increment_failed_attempts()"
+5. The failed attempts should be zero initially, while registering the user, instead of 3.
+    So, "failed_attempts_left": [3], has been changed to  "failed_attempts_left": [0], 
+6. username should not be converted to lowercase. 
+    `user_row = self.users[self.users['username'].str.lower() == username.lower()]` has been changed to `user_row = 
+    self.users[self.users['username'] == username]`
+7.  As instructed in the prompt, it should first login thrice with neena, and then twice with helios, so
+"auth_system.login("neena", "password321")  
+ auth_system.login("Neena", "password123")  
+ auth_system.login("neena", "password321")  
+ auth_system.login("neena", "password123")   
+ auth_system.login("helios", "mysecurepassword")"
 
-# has been replaced with 
+has been replaced with 
 
-# auth_system.login("neena", "password321")  
-# auth_system.login("Neena", "password123")  
-# auth_system.login("neena", "password123")  
-# auth_system.login("helios", "password321")
-# auth_system.login("helios", "mysecurepassword")
+auth_system.login("neena", "password321")  
+auth_system.login("Neena", "password123")  
+auth_system.login("neena", "password123")  
+auth_system.login("helios", "password321")
+auth_system.login("helios", "mysecurepassword")
 
 
-# So, the four lines below has been replaced with the above 5 lines.
+So, the four lines below has been replaced with the above 5 lines.
