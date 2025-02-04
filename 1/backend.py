@@ -1,18 +1,18 @@
-# The following issues are there that restricts smooth update:
-# 1. In app.py, inside the api_update_user function
-# "if data is not None:
+The following issues are there that restricts smooth update:
+1. In app.py, inside the api_update_user function
+"if data is not None:
 
-#         return jsonify({'error': 'No data provided for update.'}), 400"
-# this line is creating an issue because it always returns from this line since data is not None(it has the user object stored).
-# We need to omit "not" from the if condition.
-# 2. In User.py, we call the function get_user and pass on the user_id with it but it contains the 1-based indexing id while it is stored in 0-based indexing. So we need to pass "user_id - 1".
-#    "user = get_user_by_id(user_id)"  --> "user = get_user_by_id(user_id - 1)".
+        return jsonify({'error': 'No data provided for update.'}), 400"
+this line is creating an issue because it always returns from this line since data is not None(it has the user object stored).
+We need to omit "not" from the if condition.
+2. In User.py, we call the function get_user and pass on the user_id with it but it contains the 1-based indexing id while it is stored in 0-based indexing. So we need to pass "user_id - 1".
+   "user = get_user_by_id(user_id)"  --> "user = get_user_by_id(user_id - 1)".
 
 
-# NO IF
-# TF
+NO IF
+TF
 
-### ProfilePage component:
+## ProfilePage component:
 
 ```js
 
@@ -703,17 +703,17 @@ if __name__ == '__main__':
 
 
 
-# These are the rewrites:
-# 1. In app.py, inside the api_update_user function
-# "if data is not None:
-#         return jsonify({'error': 'No data provided for update.'}), 400"
-# this line is creating an issue because it always returns from this line since data is not None(it has the user object stored).
+These are the rewrites:
+1. In app.py, inside the api_update_user function
+"if data is not None:
+        return jsonify({'error': 'No data provided for update.'}), 400"
+this line is creating an issue because it always returns from this line since data is not None(it has the user object stored).
 
-# We need to omit "not" from the if condition.
+We need to omit "not" from the if condition.
 
-# So, this is correct.
-# "if data is None:
-#         return jsonify({'error': 'No data provided for update.'}), 400"
+So, this is correct.
+"if data is None:
+        return jsonify({'error': 'No data provided for update.'}), 400"
 
-# 2. In User.py, we call the function get_user and pass on the user_id with it, but it contains the 1-based indexing id while it is stored in 0-based indexing. So we must pass "user_id-1".
-#    "user = get_user_by_id(user_id)"  --> "user = get_user_by_id(user_id - 1)".
+2. In User.py, we call the function get_user and pass on the user_id with it, but it contains the 1-based indexing id while it is stored in 0-based indexing. So we must pass "user_id-1".
+   "user = get_user_by_id(user_id)"  --> "user = get_user_by_id(user_id - 1)".
